@@ -10,6 +10,24 @@
     <p><label>身長(cm)：<input name="height" type="number" step="any"></label></p>
     <p><label>BMI：<output name="bmi"></output></label></p>
 </form>
+<form oninput="total.value = Number(price.value) * Number(num.value)">
+    <p><label>単価(円)：<input name="price" type="number" step="any"></label></p>
+    <p><label>数(個)：<input name="num" type="number" step="any"></label></p>
+    <p><label>合計(円):<output name="total" for="price num"></output></label></p>
+
+    <!-- ラジオボタンに2つ追加 -->
+<input id="multiply" type="radio" name="cal0" value="*">
+<label for="multiply">掛ける</label>
+<input id="divide" type="radio" name="cal0" value="/">
+<label for="divide">割る</label>
+
+<!-- ボタンのonclick属性を修正 -->
+<button onclick="result0.value =
+    (cal0[0].checked)? Number(num01.value) + Number(num02.value) :
+    (cal0[1].checked)? Number(num01.value) - Number(num02.value) :
+    (cal0[2].checked)? Number(num01.value) * Number(num02.value) :
+    (cal0[3].checked)? Number(num01.value) / Number(num02.value) : NaN">計算</button>
+</form>
 <p>清水達己(AAA25242)</p>
 <h1>おすすめな旅行先</h1>
 <img src="https://tse3.mm.bing.net/th/id/OIP.v8kLTCzeH6WiTq-7qqzkeQHaE1?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" width="200" height="200" alt="鳥取">
